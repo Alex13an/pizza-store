@@ -6,7 +6,6 @@ import { publicRoutes } from './pages'
 const App: FC = () => {
   return (
     <>
-      123
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           {publicRoutes.map((route) => (
