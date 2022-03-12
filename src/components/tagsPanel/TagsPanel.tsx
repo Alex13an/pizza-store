@@ -3,7 +3,7 @@ import './tagsPanel.scss'
 
 const TagsPanel: FC = () => {
   return (
-    <div className='content__top'>
+    <>
       <div className='categories'>
         <ul>
           <li className='active'>Все</li>
@@ -39,7 +39,7 @@ const TagsPanel: FC = () => {
           </ul>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 
