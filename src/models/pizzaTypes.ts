@@ -8,3 +8,13 @@ export interface IPizza {
   category: number
   rating: number
 }
+
+export interface IFilter {
+  type: string
+  desc: string
+}
+
+export interface IParams {
+  category?: number
+  _sort: string
+}
