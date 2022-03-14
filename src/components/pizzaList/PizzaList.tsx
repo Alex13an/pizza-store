@@ -9,7 +9,7 @@ interface PizzaListProps {
 const PizzaList: FC<PizzaListProps> = ({ pizzas }) => {
   return (
     <>
-      {pizzas.map((pizza) => (
+      {pizzas.map(pizza => (
         <div className='pizza-block' key={pizza.id + pizza.name}>
           <img className='pizza-block__image' src={pizza.imageUrl} alt='Pizza' />
           <h4 className='pizza-block__title'>{pizza.name}</h4>

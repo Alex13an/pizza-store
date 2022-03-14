@@ -1,13 +1,12 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { IPizza } from '../../models/pizzaTypes'
-import { IParams } from './../../models/pizzaTypes';
+import { IPizza, IParams } from '../../models/pizzaTypes'
 
 export const pizzaApi = createApi({
   reducerPath: 'pizzaApi',
   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:1314/' }),
   endpoints: builder => ({
     getPizzas: builder.query<IPizza[], IParams>({
-      query: (params) => ({
+      query: params => ({
         url: '/pizzas',
         params,
       }),

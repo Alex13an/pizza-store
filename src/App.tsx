@@ -8,7 +8,7 @@ const App: FC = () => {
     <>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          {publicRoutes.map((route) => (
+          {publicRoutes.map(route => (
             <Route key={route.path} path={route.path} element={<route.element />} />
           ))}
           <Route path='*' element={<Navigate to='/' />} />

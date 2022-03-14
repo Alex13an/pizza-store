@@ -1,8 +1,7 @@
 import React from 'react'
 
 const Home = React.lazy(() => import('./home/Home'))
-const PageOne = React.lazy(() => import('./pageOne/PageOne'))
-const PageTwo = React.lazy(() => import('./pageTwo/PageTwo'))
+const Cart = React.lazy(() => import('./cart/Cart'))
 
 export interface IRoute {
   path: string
@@ -11,8 +10,7 @@ export interface IRoute {
 
 export enum RouteNames {
   HOME = '/',
-  PAGEONE = '/pageOne',
-  PAGETWO = '/pageTwo',
+  CART = '/cart',
 }
 
 export const publicRoutes: IRoute[] = [
@@ -21,11 +19,7 @@ export const publicRoutes: IRoute[] = [
     element: Home,
   },
   {
-    path: RouteNames.PAGEONE,
-    element: PageOne,
-  },
-  {
-    path: RouteNames.PAGETWO,
-    element: PageTwo,
+    path: RouteNames.CART,
+    element: Cart,
   },
 ]
