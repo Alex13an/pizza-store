@@ -2,8 +2,10 @@ import React, { FC } from 'react'
 import './mainHeader.scss'
 import pizzaLogo from '../../assets/icons/pizza-logo.svg'
 import { Link } from 'react-router-dom'
+import { useAppSelector } from '../../hooks/storeHooks'
 
 const MainHeader: FC = () => {
+  const { cartNetWorth, cartPizzasAmount } = useAppSelector(state => state.RootReducer.pizzaSlice)
   return (
     <div className='header'>
       <div className='container'>
@@ -16,7 +18,7 @@ const MainHeader: FC = () => {
         </div>
         <div className='header__cart'>
           <Link to={'/cart'} className='button button--cart'>
-            <span>520 ₽</span>
+            <span>{cartNetWorth} ₽</span>
             <div className='button__delimiter'></div>
             <svg
               width='18'
@@ -47,7 +49,7 @@ const MainHeader: FC = () => {
                 strokeLinejoin='round'
               />
             </svg>
-            <span>3</span>
+            <span>{cartPizzasAmount}</span>
           </Link>
         </div>
       </div>

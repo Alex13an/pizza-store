@@ -1,9 +1,9 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
-import counterSlice from './reducers/counterSlice'
 import { pizzaApi } from './services/pizzaApi'
+import pizzaSlice from './slices/pizzaSlice'
 
 const RootReducer = combineReducers({
-  counterSlice,
+  pizzaSlice,
 })
 
 export const store = configureStore({

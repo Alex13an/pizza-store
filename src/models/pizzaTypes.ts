@@ -9,6 +9,13 @@ export interface IPizza {
   rating: number
 }
 
+export interface ICartPizza extends IPizza {
+  currentType: number
+  currentSize: number
+  currentPrice: number
+  currentAmount: number
+}
+
 export interface IFilter {
   type: string
   desc: string
