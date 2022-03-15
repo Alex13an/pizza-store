@@ -3,7 +3,7 @@ import { useAppSelector } from '../../hooks/storeHooks'
 import { IPizza } from '../../models/pizzaTypes'
 import PizzaItem from '../pizzaItem/PizzaItem'
 import './pizzaList.scss'
-import findTotalAmount from '../../utils/findTotalAmound'
+import findTotalAmount from '../../utils/findTotalAmount'
 
 interface PizzaListProps {
   pizzas: IPizza[]
