@@ -1,35 +1,56 @@
 import React, { FC } from 'react'
 import { GoPlus } from 'react-icons/go'
 import { FiMinus } from 'react-icons/fi'
+import { ICartPizza } from '../../models/pizzaTypes'
+import { useAppDispatch } from './../../hooks/storeHooks'
+import { cartAdd, cartDelete, cartRemove } from '../../redux/slices/pizzaSlice'
 
-const CartItem: FC = () => {
+interface CartItemProps {
+  pizza: ICartPizza
+}
+
+const CartItem: FC<CartItemProps> = ({ pizza }) => {
+  const dispatch = useAppDispatch()
   return (
     <div className='cart__item'>
       <div className='cart__item-img'>
-        <img
-          className='pizza-block__image'
-          src='https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg'
-          alt='Pizza'
-        />
+        <img className='pizza-block__image' src={pizza.imageUrl} alt='Pizza' />
       </div>
       <div className='cart__item-info'>
-        <h3>Сырный цыпленок</h3>
-        <p>тонкое тесто, 26 см.</p>
+        <h3>{pizza.name}</h3>
+        <p>
+          {pizza.currentType ? 'традиционное' : 'тонкое'} тесто, {pizza.currentSize} см.
+        </p>
       </div>
       <div className='cart__item-count'>
-        <div className='button button--outline button--circle cart__item-count-minus'>
+        <div
+          onClick={() => dispatch(cartRemove(pizza))}
+          role='button'
+          tabIndex={0}
+          className='button button--outline button--circle cart__item-count-minus'
+        >
           <FiMinus />
         </div>
-        <b>2</b>
-        <div className='button button--outline button--circle cart__item-count-plus'>
+        <b>{pizza.currentAmount}</b>
+        <div
+          onClick={() => dispatch(cartAdd(pizza))}
+          role='button'
+          tabIndex={0}
+          className='button button--outline button--circle cart__item-count-plus'
+        >
           <GoPlus />
         </div>
       </div>
       <div className='cart__item-price'>
-        <b>770 ₽</b>
+        <b>{pizza.currentPrice * pizza.currentAmount} ₽</b>
       </div>
       <div className='cart__item-remove'>
-        <div className='button button--outline button--circle'>
+        <div
+          onClick={() => dispatch(cartDelete(pizza))}
+          role='button'
+          tabIndex={0}
+          className='button button--outline button--circle'
+        >
           <GoPlus />
         </div>
       </div>
