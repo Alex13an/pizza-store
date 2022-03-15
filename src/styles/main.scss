@@ -2,7 +2,7 @@
 @import 'abstracts/variables.scss';
 
 //base
-@import 'base/base.scss';
+@import 'base/base.scss', 'base/app.scss';
 
 //fonts
 @import 'fonts/mainFonts.scss';

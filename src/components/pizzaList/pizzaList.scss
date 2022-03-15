@@ -46,8 +46,7 @@
     }
     &_dead {
       cursor: auto;
-      opacity: 0.5;
-      background-color: darken($color: #ffffff, $amount: 15%);
+      opacity: 0.3;
       border-radius: 5px;
     }
   }
@@ -75,5 +74,10 @@
     font-size: 22px;
     line-height: 27px;
     letter-spacing: 0.015em;
+  }
+  
+  &__button {
+    display: flex;
+    align-items: center;
   }
 }
