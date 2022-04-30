@@ -17,7 +17,7 @@ export interface ICartPizza extends IPizza {
 }
 
 export interface IFilter {
-  type: string
+  type: 'rating' | 'price' | 'name'
   desc: string
 }
 
